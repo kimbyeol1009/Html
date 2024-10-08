@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            선택자 -> 내가 스타일을 부여할 대상
+            * 우선순위 : 아이디(100) >  클래스(10) > 태그(1) > 전체(0)
+            * 중복이 되는 속성들에게만 우선순위가 적용된다.
+            1) 전체선택자 = *  
+            2) 태그선택자 = 태그이름 작성
+            3) 아이디선택자 = 특정 태그 한개에게 부여하는 고유한 값(중복x)
+                - 스타일에서는 영역을 작성할 때 활용
+                - JS를 통해서 기능 제작할 때 활용  
+            4) 클래스선택자 = 태그들에게 공통적으로 부여하는 중복된 이름
+            5) 계층선택자 = 태그들의 포함 관계를 이용해서 적용하는 방법
+                - 자식선택자(>) : 부모로부터 자식을 지칭할 때 사용    
+        */
+        *{
+            color :  green;
+        }
+        p{
+            color : red;
+        }
+        p1{
+            color :  blue;
+        }
+        .txt{
+            color :aquamarine;
+        }
+        div>span{
+            color : pink;
+        }
+        div>h1{
+            color:deeppink;
+        }
+        div>div>span{
+            color :blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <p>첫번째 p태그</p>
+    <p id = 'p1' class="txt">두번째 p태그</p>
+    <span class="txt">첫번째 span태그</span><br>
+    <span class="txt">두번째 span태그</span><br>
+    
+
+    <div>
+        <span>div의 자식태그</span>
+        <h1>div의 h1자식태그</h1>
+        <div>
+            <span> 나를 바꿔봐!</span>
+        </div>
+    </div>
+
+
+</body>
+</html>
